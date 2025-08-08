@@ -4,7 +4,7 @@ Uma plataforma segura e acolhedora para comunidade LGBTQIAPN+ desenvolvida como 
 
 ## 🚀 Deploy
 
-A aplicação está disponível em: [https://lacrei-saude-challenge.vercel.app](https://lacrei-saude-challenge.vercel.app)
+A aplicação está disponível em: (https://v0-front-end-desafio.vercel.app/)
 
 ## 📋 Sobre o Projeto
 
