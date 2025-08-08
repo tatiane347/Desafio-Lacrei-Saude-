@@ -177,4 +177,4 @@ Este projeto foi desenvolvido para fins educacionais e de avaliação técnica.
 
 ---
 
-Desenvolvido com ❤️ para a Lacrei Saúde por [Seu Nome]
+Desenvolvido com ❤️ para a Lacrei Saúde por [Tatiane Nascimento]
