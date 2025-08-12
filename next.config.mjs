@@ -6,7 +6,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Otimização de imagens com compressão máxima
+  // Otimização de imagens com configurações válidas
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
@@ -14,23 +14,17 @@ const nextConfig = {
     minimumCacheTTL: 31536000, // 1 ano
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    // Otimização agressiva de qualidade
-    quality: 75,
-    // Lazy loading por padrão
-    loading: 'lazy',
+    // Removidas configurações inválidas: quality e loading
   },
   // Compressão habilitada
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
-  // Otimizações experimentais para performance
+  // Otimizações experimentais válidas para Next.js 15
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['lucide-react', 'styled-components'],
-    // Reduz bundle size
-    bundlePagesRouterDependencies: true,
-    // Otimiza servidor
-    serverComponentsExternalPackages: [],
+    // Removidas configurações inválidas
   },
   // Webpack otimizado para reduzir bundle
   webpack: (config, { dev, isServer }) => {

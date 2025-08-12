@@ -3,19 +3,15 @@
 import type React from "react"
 
 import Link from "next/link"
-import { Suspense, lazy } from "react"
+import { Suspense } from "react"
 import styled from "styled-components"
 import { Container, Button, Card, Section, Grid, FlexContainer } from "@/styles/GlobalStyles"
 import { OptimizedImage } from "@/components/OptimizedImage"
-
-// Lazy loading para componentes não críticos
-const FeatureCard = lazy(() => import("@/components/FeatureCard"))
 
 const HeroSection = styled(Section)`
   background-color: var(--white);
   text-align: center;
   padding-top: 2rem;
-  /* Otimização de performance */
   contain: layout style paint;
 `
 
@@ -38,13 +34,11 @@ const HeroImageWrapper = styled.div`
   width: 100%;
   max-width: 50rem;
   margin: 0 auto;
-  /* Otimização de layout */
   aspect-ratio: 2 / 1;
 `
 
 const FeaturesSection = styled(Section)`
   background-color: var(--background-light);
-  /* Otimização de performance */
   contain: layout style paint;
 `
 
@@ -53,7 +47,6 @@ const FeatureCardStyled = styled(Card)`
   height: 100%;
   display: flex;
   flex-direction: column;
-  /* Otimização de performance */
   contain: layout style paint;
 `
 
@@ -66,7 +59,6 @@ const FeatureIcon = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
-  /* Otimização de performance */
   will-change: transform;
 
   svg {
@@ -80,7 +72,6 @@ const CTASection = styled(Section)`
   background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-hover) 100%);
   color: var(--white);
   text-align: center;
-  /* Otimização de performance */
   contain: layout style paint;
 
   h2 {
@@ -125,6 +116,19 @@ function FeatureCardComponent({
   )
 }
 
+const ImageFallback = styled.div`
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(135deg, var(--primary-green-light) 0%, var(--background-light) 100%);
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-green);
+  font-weight: 600;
+  font-size: 1.125rem;
+`
+
 export default function HomePage() {
   return (
     <>
@@ -161,13 +165,15 @@ export default function HomePage() {
           </FlexContainer>
 
           <HeroImageWrapper>
-            <OptimizedImage
-              src="/welcoming-healthcare.png"
-              alt="Profissionais de saúde diversos e capacitados acolhendo pacientes da comunidade LGBTQIAPN+ em ambiente seguro, inclusivo e humanizado"
-              width={800}
-              height={400}
-              priority
-            />
+            <Suspense fallback={<ImageFallback>Carregando imagem...</ImageFallback>}>
+              <OptimizedImage
+                src="/welcoming-healthcare.png"
+                alt="Profissionais de saúde diversos e capacitados acolhendo pacientes da comunidade LGBTQIAPN+ em ambiente seguro, inclusivo e humanizado"
+                width={800}
+                height={400}
+                priority
+              />
+            </Suspense>
           </HeroImageWrapper>
         </Container>
       </HeroSection>
@@ -179,51 +185,45 @@ export default function HomePage() {
           </h2>
 
           <Grid columns={3}>
-            <Suspense fallback={<FeatureCardStyled>Carregando...</FeatureCardStyled>}>
-              <FeatureCardComponent
-                icon={
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                    />
-                  </svg>
-                }
-                title="Segurança"
-                description="Ambiente seguro e livre de discriminação para toda comunidade LGBTQIAPN+ com protocolos rigorosos de privacidade"
-              />
-            </Suspense>
+            <FeatureCardComponent
+              icon={
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  />
+                </svg>
+              }
+              title="Segurança"
+              description="Ambiente seguro e livre de discriminação para toda comunidade LGBTQIAPN+ com protocolos rigorosos de privacidade"
+            />
 
-            <Suspense fallback={<FeatureCardStyled>Carregando...</FeatureCardStyled>}>
-              <FeatureCardComponent
-                icon={
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                    />
-                  </svg>
-                }
-                title="Acolhimento"
-                description="Profissionais capacitados e sensibilizados para atendimento humanizado e respeitoso às diversidades"
-              />
-            </Suspense>
+            <FeatureCardComponent
+              icon={
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
+              }
+              title="Acolhimento"
+              description="Profissionais capacitados e sensibilizados para atendimento humanizado e respeitoso às diversidades"
+            />
 
-            <Suspense fallback={<FeatureCardStyled>Carregando...</FeatureCardStyled>}>
-              <FeatureCardComponent
-                icon={
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                }
-                title="Rapidez"
-                description="Conecte-se rapidamente com profissionais qualificados e disponíveis através de nossa plataforma otimizada"
-              />
-            </Suspense>
+            <FeatureCardComponent
+              icon={
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              }
+              title="Rapidez"
+              description="Conecte-se rapidamente com profissionais qualificados e disponíveis através de nossa plataforma otimizada"
+            />
           </Grid>
         </Container>
       </FeaturesSection>

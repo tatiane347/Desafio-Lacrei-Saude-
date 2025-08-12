@@ -87,10 +87,9 @@ export function OptimizedImage({ src, alt, width, height, priority = false, clas
           setIsLoading(false)
           setHasError(true)
         }}
-        // Otimizações adicionais
+        // Configurações válidas para Next.js 15
         loading={priority ? "eager" : "lazy"}
         decoding="async"
-        fetchPriority={priority ? "high" : "auto"}
       />
     </ImageContainer>
   )
