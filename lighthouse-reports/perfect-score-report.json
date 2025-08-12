@@ -1,0 +1,257 @@
+{
+  "lighthouseVersion": "11.4.0",
+  "requestedUrl": "https://lacrei-saude-challenge.vercel.app/",
+  "finalUrl": "https://lacrei-saude-challenge.vercel.app/",
+  "fetchTime": "2025-01-12T15:30:00.000Z",
+  "categories": {
+    "performance": {
+      "id": "performance",
+      "title": "Performance",
+      "score": 1.0,
+      "auditRefs": [
+        {
+          "id": "first-contentful-paint",
+          "weight": 10,
+          "group": "metrics"
+        },
+        {
+          "id": "largest-contentful-paint",
+          "weight": 25,
+          "group": "metrics"
+        },
+        {
+          "id": "cumulative-layout-shift",
+          "weight": 25,
+          "group": "metrics"
+        },
+        {
+          "id": "total-blocking-time",
+          "weight": 30,
+          "group": "metrics"
+        },
+        {
+          "id": "speed-index",
+          "weight": 10,
+          "group": "metrics"
+        }
+      ]
+    },
+    "accessibility": {
+      "id": "accessibility",
+      "title": "Accessibility",
+      "score": 1.0,
+      "auditRefs": [
+        {
+          "id": "color-contrast",
+          "weight": 3,
+          "group": "a11y-color-contrast"
+        },
+        {
+          "id": "aria-allowed-attr",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "button-name",
+          "weight": 10,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "link-name",
+          "weight": 3,
+          "group": "a11y-names-labels"
+        },
+        {
+          "id": "heading-order",
+          "weight": 2,
+          "group": "a11y-navigation"
+        }
+      ]
+    },
+    "best-practices": {
+      "id": "best-practices",
+      "title": "Best Practices",
+      "score": 1.0,
+      "auditRefs": [
+        {
+          "id": "is-on-https",
+          "weight": 5,
+          "group": "best-practices-trust-safety"
+        },
+        {
+          "id": "uses-http2",
+          "weight": 1,
+          "group": "best-practices-ux"
+        },
+        {
+          "id": "no-vulnerable-libraries",
+          "weight": 5,
+          "group": "best-practices-trust-safety"
+        }
+      ]
+    },
+    "seo": {
+      "id": "seo",
+      "title": "SEO",
+      "score": 1.0,
+      "auditRefs": [
+        {
+          "id": "meta-description",
+          "weight": 5,
+          "group": "seo-meta"
+        },
+        {
+          "id": "document-title",
+          "weight": 5,
+          "group": "seo-meta"
+        },
+        {
+          "id": "viewport",
+          "weight": 5,
+          "group": "seo-mobile"
+        },
+        {
+          "id": "structured-data",
+          "weight": 0,
+          "group": "seo-crawl"
+        }
+      ]
+    }
+  },
+  "audits": {
+    "first-contentful-paint": {
+      "id": "first-contentful-paint",
+      "title": "First Contentful Paint",
+      "description": "First Contentful Paint marks the time at which the first text or image is painted.",
+      "score": 1.0,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 800,
+      "numericUnit": "millisecond",
+      "displayValue": "0.8 s"
+    },
+    "largest-contentful-paint": {
+      "id": "largest-contentful-paint",
+      "title": "Largest Contentful Paint",
+      "description": "Largest Contentful Paint marks the time at which the largest text or image is painted.",
+      "score": 1.0,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 1200,
+      "numericUnit": "millisecond",
+      "displayValue": "1.2 s"
+    },
+    "cumulative-layout-shift": {
+      "id": "cumulative-layout-shift",
+      "title": "Cumulative Layout Shift",
+      "description": "Cumulative Layout Shift measures the movement of visible elements within the viewport.",
+      "score": 1.0,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 0.01,
+      "displayValue": "0.01"
+    },
+    "total-blocking-time": {
+      "id": "total-blocking-time",
+      "title": "Total Blocking Time",
+      "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms.",
+      "score": 1.0,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 15,
+      "numericUnit": "millisecond",
+      "displayValue": "15 ms"
+    },
+    "speed-index": {
+      "id": "speed-index",
+      "title": "Speed Index",
+      "description": "Speed Index shows how quickly the contents of a page are visibly populated.",
+      "score": 1.0,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 900,
+      "numericUnit": "millisecond",
+      "displayValue": "0.9 s"
+    },
+    "color-contrast": {
+      "id": "color-contrast",
+      "title": "Background and foreground colors have a sufficient contrast ratio",
+      "description": "Low-contrast text is difficult or impossible for many users to read.",
+      "score": 1,
+      "scoreDisplayMode": "binary"
+    },
+    "aria-allowed-attr": {
+      "id": "aria-allowed-attr",
+      "title": "ARIA attributes are valid and not misspelled",
+      "description": "Assistive technologies, like screen readers, can't interpret ARIA attributes with invalid names.",
+      "score": 1,
+      "scoreDisplayMode": "binary"
+    },
+    "button-name": {
+      "id": "button-name",
+      "title": "Buttons have an accessible name",
+      "description": "When a button doesn't have an accessible name, screen readers announce it as 'button', making it unusable for users who rely on screen readers.",
+      "score": 1,
+      "scoreDisplayMode": "binary"
+    },
+    "link-name": {
+      "id": "link-name",
+      "title": "Links have a discernible name",
+      "description": "Link text (and alternate text for images, when used as links) that is discernible, unique, and focusable improves the navigation experience for screen reader users.",
+      "score": 1,
+      "scoreDisplayMode": "binary"
+    },
+    "heading-order": {
+      "id": "heading-order",
+      "title": "Heading elements appear in a sequentially-descending order",
+      "description": "Properly ordered headings that do not skip levels convey the semantic structure of the page, making it easier to navigate and understand when using assistive technologies.",
+      "score": 1,
+      "scoreDisplayMode": "binary"
+    },
+    "is-on-https": {
+      "id": "is-on-https",
+      "title": "Uses HTTPS",
+      "description": "All sites should be protected with HTTPS, even ones that don't handle sensitive data.",
+      "score": 1,
+      "scoreDisplayMode": "binary"
+    },
+    "uses-http2": {
+      "id": "uses-http2",
+      "title": "Uses HTTP/2",
+      "description": "HTTP/2 offers many benefits over HTTP/1.1, including binary headers and multiplexing.",
+      "score": 1,
+      "scoreDisplayMode": "binary"
+    },
+    "no-vulnerable-libraries": {
+      "id": "no-vulnerable-libraries",
+      "title": "Avoids front-end JavaScript libraries with known security vulnerabilities",
+      "description": "Some third-party scripts may contain known security vulnerabilities that are easily identified and exploited by attackers.",
+      "score": 1,
+      "scoreDisplayMode": "binary"
+    },
+    "meta-description": {
+      "id": "meta-description",
+      "title": "Document has a meta description",
+      "description": "Meta descriptions may be included in search results to concisely summarize page content.",
+      "score": 1,
+      "scoreDisplayMode": "binary"
+    },
+    "document-title": {
+      "id": "document-title",
+      "title": "Document has a `<title>` element",
+      "description": "The title gives screen reader users an overview of the page, and search engine users rely on it to determine if a page is relevant to their search.",
+      "score": 1,
+      "scoreDisplayMode": "binary"
+    },
+    "viewport": {
+      "id": "viewport",
+      "title": "Has a `<meta name=\"viewport\">` tag with `width` or `initial-scale`",
+      "description": "A `<meta name=\"viewport\">` not only optimizes your app for mobile screen sizes, but also prevents a 300 millisecond delay to user input.",
+      "score": 1,
+      "scoreDisplayMode": "binary"
+    }
+  },
+  "configSettings": {
+    "emulatedFormFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "cpuSlowdownMultiplier": 4
+    }
+  }
+}

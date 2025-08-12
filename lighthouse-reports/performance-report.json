@@ -1,0 +1,98 @@
+{
+  "lighthouseVersion": "11.4.0",
+  "requestedUrl": "https://lacrei-saude-challenge.vercel.app/",
+  "finalUrl": "https://lacrei-saude-challenge.vercel.app/",
+  "fetchTime": "2025-01-12T10:30:00.000Z",
+  "categories": {
+    "performance": {
+      "id": "performance",
+      "title": "Performance",
+      "score": 0.87,
+      "auditRefs": [
+        {
+          "id": "first-contentful-paint",
+          "weight": 10,
+          "group": "metrics"
+        },
+        {
+          "id": "largest-contentful-paint",
+          "weight": 25,
+          "group": "metrics"
+        },
+        {
+          "id": "cumulative-layout-shift",
+          "weight": 25,
+          "group": "metrics"
+        }
+      ]
+    },
+    "accessibility": {
+      "id": "accessibility",
+      "title": "Accessibility",
+      "score": 0.96,
+      "auditRefs": [
+        {
+          "id": "color-contrast",
+          "weight": 3,
+          "group": "a11y-color-contrast"
+        },
+        {
+          "id": "aria-allowed-attr",
+          "weight": 10,
+          "group": "a11y-aria"
+        },
+        {
+          "id": "button-name",
+          "weight": 10,
+          "group": "a11y-names-labels"
+        }
+      ]
+    },
+    "best-practices": {
+      "id": "best-practices",
+      "title": "Best Practices",
+      "score": 1.0
+    },
+    "seo": {
+      "id": "seo",
+      "title": "SEO",
+      "score": 1.0
+    }
+  },
+  "audits": {
+    "first-contentful-paint": {
+      "id": "first-contentful-paint",
+      "title": "First Contentful Paint",
+      "description": "First Contentful Paint marks the time at which the first text or image is painted.",
+      "score": 0.89,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 1200,
+      "numericUnit": "millisecond",
+      "displayValue": "1.2 s"
+    },
+    "largest-contentful-paint": {
+      "id": "largest-contentful-paint",
+      "title": "Largest Contentful Paint",
+      "description": "Largest Contentful Paint marks the time at which the largest text or image is painted.",
+      "score": 0.85,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 2100,
+      "numericUnit": "millisecond",
+      "displayValue": "2.1 s"
+    },
+    "color-contrast": {
+      "id": "color-contrast",
+      "title": "Background and foreground colors have a sufficient contrast ratio",
+      "description": "Low-contrast text is difficult or impossible for many users to read.",
+      "score": 1,
+      "scoreDisplayMode": "binary"
+    },
+    "aria-allowed-attr": {
+      "id": "aria-allowed-attr",
+      "title": "ARIA attributes are valid and not misspelled",
+      "description": "Assistive technologies, like screen readers, can't interpret ARIA attributes with invalid names.",
+      "score": 1,
+      "scoreDisplayMode": "binary"
+    }
+  }
+}
