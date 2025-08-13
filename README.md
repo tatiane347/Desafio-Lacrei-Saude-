@@ -1,10 +1,32 @@
-# Lacrei Saúde - Desafio Técnico Front-end
+
+Este repositório documenta a análise de desempenho do projeto frontend, com o objetivo de otimizar a performance e a experiência do usuário. Foram identificados problemas críticos que impactam diretamente o tempo de carregamento e a usabilidade.
+🚀 Problemas Identificados
+Nossa análise inicial, baseada em ferramentas como o Lighthouse, revelou as seguintes questões que precisam ser resolvidas:
+ * Tamanho Excessivo dos Recursos: O carregamento inicial da página é de 3,7 MB, um valor muito alto para o tipo de conteúdo apresentado. Isso prejudica a experiência, especialmente em conexões mais lentas.
+ * Ausência de Compressão: Arquivos estáticos (JS, CSS e HTML) não estão sendo compactados (com Gzip ou Brotli), o que aumenta desnecessariamente o volume de dados transferidos.
+ * Recursos de Renderização Bloqueantes: Bibliotecas inteiras como lodash.js e jquery.js estão sendo carregadas, mesmo quando apenas uma pequena parte delas é utilizada. Isso bloqueia a renderização e atrasa o carregamento da página.
+ * Imagens Não Otimizadas: As imagens não estão redimensionadas para o tamanho correto e não estão otimizadas, contribuindo para o grande volume de dados a ser carregado.
+💡 Plano de Ação
+Para resolver os problemas identificados, as seguintes melhorias serão implementadas:
+ * Habilitar Compressão de Recursos: Configurar o servidor para compactar arquivos estáticos usando Gzip ou Brotli.
+ * Otimizar o Carregamento de Bibliotecas:
+   * Implementar "tree-shaking" para remover código não utilizado.
+   * Considerar o carregamento assíncrono para bibliotecas mais pesadas.
+ * Redimensionar e Otimizar Imagens:
+   * Utilizar ferramentas de otimização de imagens para reduzir o tamanho dos arquivos.
+   * Implementar o carregamento adaptativo com srcset.
+ * Implementar Lazy Loading: Adotar o carregamento preguiçoso para imagens e componentes que não são essenciais para a renderização inicial.
+ * Revisar e Limpar o Código: Fazer uma análise do código-fonte para remover dependências desnecessárias e reduzir o tamanho dos arquivos JavaScript e CSS.
+ * Utilizar Ferramentas de Monitoramento: Integrar ferramentas como o Speed Insights da Vercel para monitorar o desempenho em tempo real e identificar novos gargalos.
+A implementação dessas melhorias será fundamental para alcançar pontuações mais altas no Lighthouse, reduzindo o tempo de carregamento e oferecendo uma experiência de usuário mais fluida e eficiente.
+O que você achou? Posso fazer alguma alteração ou adicionar algo mais detalhado?
+ 1# Lacrei Saúde - Desafio Técnico Front-end
 
 Uma plataforma segura e acolhedora para comunidade LGBTQIAPN+ desenvolvida como parte do desafio técnico para voluntariado na Lacrei Saúde.
 
 ## 🚀 Deploy
 
-A aplicação está disponível em: [https://lacrei-saude-challenge.vercel.app](https://lacrei-saude-challenge.vercel.app)
+A aplicação está disponível em: https://v0-front-end-desafio.vercel.app/))
 
 ## 🏆 Lighthouse Scores - 100% em Todas as Métricas
 
