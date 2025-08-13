@@ -1,4 +1,4 @@
-
+p
 Este repositório documenta a análise de desempenho do projeto frontend, com o objetivo de otimizar a performance e a experiência do usuário. Foram identificados problemas críticos que impactam diretamente o tempo de carregamento e a usabilidade.
 🚀 Problemas Identificados
 Nossa análise inicial, baseada em ferramentas como o Lighthouse, revelou as seguintes questões que precisam ser resolvidas:
@@ -340,7 +340,7 @@ Este projeto foi desenvolvido para fins educacionais e de avaliação técnica c
 ### 📞 Contato
 
 Para dúvidas sobre este projeto:
-- **Email**: [seu-email@exemplo.com]
+- **Email**: [tatianen25@gmail.com]
 - **LinkedIn**: [seu-linkedin]
 - **GitHub**: [seu-github]
 
